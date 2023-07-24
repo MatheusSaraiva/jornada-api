@@ -4,11 +4,11 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 
-from depoimentos.views import DepoimentosViewSet
+from depoimentos.views import Depoimentos_homeViewSet, DepoimentosViewSet
 
 router = routers.DefaultRouter()
 router.register('depoimentos', DepoimentosViewSet)
-router.register('depoimentos-home', DepoimentosViewSet)
+router.register('depoimentos-home', Depoimentos_homeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
