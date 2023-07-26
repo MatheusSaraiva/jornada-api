@@ -7,8 +7,8 @@ from rest_framework import routers
 from depoimentos.views import Depoimentos_homeViewSet, DepoimentosViewSet
 
 router = routers.DefaultRouter()
-router.register('depoimentos', DepoimentosViewSet)
-router.register('depoimentos-home', Depoimentos_homeViewSet)
+router.register('depoimentos', DepoimentosViewSet, basename="Depoimentos")
+router.register('depoimentos-home', Depoimentos_homeViewSet, basename="Depoimentos_home")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
