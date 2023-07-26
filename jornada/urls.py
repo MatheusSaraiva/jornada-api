@@ -5,10 +5,12 @@ from django.urls import include, path
 from rest_framework import routers
 
 from depoimentos.views import Depoimentos_homeViewSet, DepoimentosViewSet
+from destino.views import DestinosViewSet
 
 router = routers.DefaultRouter()
 router.register('depoimentos', DepoimentosViewSet, basename="Depoimentos")
 router.register('depoimentos-home', Depoimentos_homeViewSet, basename="Depoimentos_home")
+router.register('destinos', DestinosViewSet, basename="Destinos")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
