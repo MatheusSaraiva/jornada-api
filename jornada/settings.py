@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'destino',
     'rest_framework',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
