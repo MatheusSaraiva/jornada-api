@@ -6,4 +6,4 @@ from destino.models import Destino
 class DestinoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Destino
-        fields = ['id', 'nome', 'preco', 'foto']
+        fields = '__all__' 
