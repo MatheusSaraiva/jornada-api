@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from destino.models import Destino
+
+
+class Destinos(admin.ModelAdmin):
+    list_display = ('id', 'nome',)
+    list_display_links = ('id',)
+
+admin.site.register(Destino, Destinos)
