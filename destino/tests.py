@@ -9,8 +9,8 @@ class DepoimentoApiTEST(APITestCase):
     
     def setUp(self):
         self.list_url = reverse('Destinos-list')
-        self.destino_1 = Destino.objects.create(preco=540, nome='Belem')
-        self.destino_2 = Destino.objects.create(preco=780, nome='Santa Catarina')
+        self.destino_1 = Destino.objects.create(preco=540, nome='Belem', meta='meta1')
+        self.destino_2 = Destino.objects.create(preco=780, nome='Santa Catarina', meta='meta2')
 
     def test_requisição_get_para_listar_destino(self):
         response = self.client.get(self.list_url)
@@ -19,7 +19,8 @@ class DepoimentoApiTEST(APITestCase):
     def test_requisicao_post_para_criar_destino(self):
         data = {
             'preco': 154,
-            'nome': 'Paraiba'
+            'nome': 'Paraiba',
+            'meta': 'meta'
         }
         response = self.client.post(self.list_url, data=data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -31,7 +32,8 @@ class DepoimentoApiTEST(APITestCase):
     def test_requisicao_put_para_atualizar_destino(self):
         data = {
             'preco':150,
-            'nome': "Belem"
+            'nome': "Belem",
+            'meta': "meta1"
         }
 
         response = self.client.put('/destinos/1/', data=data)
